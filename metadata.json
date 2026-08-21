@@ -1,0 +1,6 @@
+{
+  "name": "ASET Nutrition & Dietetics Platform",
+  "description": "Comprehensive nutrition platform featuring Nutrium and YAZIO inspired hero carousel, interactive calculators, goal engine, testimonials, location clinic finder, meal planner, and patient companion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

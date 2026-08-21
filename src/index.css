@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  
+  body {
+    @apply antialiased transition-colors duration-200;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html.dark body {
+    @apply text-[#ededed] bg-[#0a0a0a] selection:bg-teal-500 selection:text-black;
+  }
+
+  html:not(.dark) body {
+    @apply text-slate-900 bg-white selection:bg-teal-600 selection:text-white;
+  }
+}
+
+/* Custom sleek scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+html:not(.dark) .custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+  border: 1px solid #171717;
+}
+
+html:not(.dark) .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Smooth Infinite Marquee Animation for Brand Carousel */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
